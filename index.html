@@ -8,58 +8,106 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 
+        :root {
+            --background-light: #f0f4f8;
+            --background-dark: #2c003e;
+            --container-light: #ffffff;
+            --container-dark: #3d0059;
+            --text-light: #555;
+            --text-dark: #ccc;
+            --link-light: #560094;
+            --link-dark: #ff6fdb;
+            --hover-link-light: #a63bff;
+            --hover-link-dark: #ff40b5;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #2c003e 0%, #4b006e 100%);
+            background: var(--background-light);
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            transition: background 0.3s ease;
         }
         .container {
             max-width: 600px;
-            background: #3d0059;
+            background: var(--container-light);
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform 0.3s ease-in-out;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
         .container:hover {
             transform: scale(1.05);
         }
         h1 {
             font-size: 32px;
-            color: #ff6fdb;
+            color: var(--link-light);
             margin-bottom: 20px;
             font-weight: 600;
         }
-
-        a:hover {
-            color: #ff40b5;
+        a {
+            color: var(--link-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
-
+        a:hover {
+            color: var(--hover-link-light);
+        }
         p {
             font-size: 18px;
             margin-bottom: 14px;
             line-height: 1.6;
-            color: #ccc;
+            color: var(--text-light);
         }
         .contact-info p {
             font-size: 16px;
             margin: 8px 0;
         }
-        a {
-            color: #ff6fdb;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--link-light);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .theme-toggle:hover {
+            background: var(--hover-link-light);
+        }
+
+        body.dark-theme {
+            background: var(--background-dark);
+        }
+        .container.dark-theme {
+            background: var(--container-dark);
+        }
+        h1.dark-theme {
+            color: var(--link-dark);
+        }
+        a.dark-theme {
+            color: var(--link-dark);
+        }
+        a.dark-theme:hover {
+            color: var(--hover-link-dark);
+        }
+        p.dark-theme {
+            color: var(--text-dark);
         }
     </style>
 </head>
 <body>
+    <button class="theme-toggle">Toggle Theme</button>
     <div class="container">
         <h1><i class="fa-solid fa-heart"></i> aster.lol <i class="fa-solid fa-heart"></i></h1>
         <p>I'm Aster, she/her. I'm not a web developer, hence the basic site. Please see the ways to contact me below.</p>
@@ -71,5 +119,22 @@
             <p>If you want to contact me any other way, feel free to email or message me, and we can work something out.</p>
         </div>
     </div>
+
+    <script>
+        const themeToggleBtn = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const container = document.querySelector('.container');
+        const h1 = document.querySelector('h1');
+        const as = document.querySelectorAll('a');
+        const ps = document.querySelectorAll('p');
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            container.classList.toggle('dark-theme');
+            h1.classList.toggle('dark-theme');
+            as.forEach(a => a.classList.toggle('dark-theme'));
+            ps.forEach(p => p.classList.toggle('dark-theme'));
+        });
+    </script>
 </body>
 </html>

@@ -39,7 +39,7 @@
             border-radius: 12px;
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease-in-out;
         }
         .container:hover {
             transform: scale(1.05);
@@ -49,6 +49,7 @@
             color: var(--link-light);
             margin-bottom: 20px;
             font-weight: 600;
+            transition: color 0.3s ease;
         }
         a {
             color: var(--link-light);
@@ -64,6 +65,7 @@
             margin-bottom: 14px;
             line-height: 1.6;
             color: var(--text-light);
+            transition: color 0.3s ease;
         }
         .contact-info p {
             font-size: 16px;

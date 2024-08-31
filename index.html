@@ -1,10 +1,75 @@
-<p>hi, welcome to my little corner of the internet. I'm aster, she/her. I'm not a webdev, hence the plaintext.
-I also don't want to take any more bandwidth than I need.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aster's silly corner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 
-email: catasterphe@protonmail.com
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2c003e 0%, #4b006e 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            background: #3d0059;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 32px;
+            color: #ff6fdb;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
 
-discord: catasterphe
-signal: catasterphe.69
+        a:hover {
+            color: #ff40b5;
+        }
 
-if you want to contact me any other way,
-email or message me and ask for another form.</p>
+        p {
+            font-size: 18px;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+        .contact-info p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+        a {
+            color: #ff6fdb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-heart"></i> aster.lol <i class="fa-solid fa-heart"></i></h1>
+        <p>I'm Aster, she/her. I'm not a web developer, hence the basic site. Please see the ways to contact me below.</p>
+        <div class="contact-info">
+            <p><i class="fa-brands fa-mastodon"></i> Fediverse: <a href="https://kitty.social/@aster" target="_blank">@aster@kitty.social</a></p>
+            <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:catasterphe@protonmail.com">catasterphe@protonmail.com</a></p>
+            <p><i class="fa-brands fa-discord"></i> Discord: <a href="https://discord.com" target="_blank">catasterphe</a></p>
+            <p><i class="fa-brands fa-signal-messenger"></i> Signal: <a href="https://signal.org/" target="_blank">catasterphe.69</a></p>
+            <p>If you want to contact me any other way, feel free to email or message me, and we can work something out.</p>
+        </div>
+    </div>
+</body>
+</html>

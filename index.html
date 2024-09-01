@@ -73,6 +73,7 @@
         }
         .theme-toggle {
             position: fixed;
+            min-width: 5%;
             top: 20px;
             right: 20px;
             background: var(--link-light);
@@ -81,7 +82,6 @@
             border-radius: 8px;
             padding: 10px 20px;
             cursor: pointer;
-            font-size: 16px;
             transition: background 0.3s ease;
         }
         .theme-toggle:hover {
@@ -109,7 +109,7 @@
     </style>
 </head>
 <body>
-    <button class="theme-toggle">Toggle Theme</button>
+    <button class="theme-toggle"><i class="fa-solid fa-sun" id="theme-icon"></i></button>
     <div class="container">
         <h1><i class="fa-solid fa-heart"></i> aster.lol <i class="fa-solid fa-heart"></i></h1>
         <p>I'm Aster, she/her. I'm not a web developer, hence the basic site. Please see the ways to contact me below.</p>
@@ -129,8 +129,10 @@
         const h1 = document.querySelector('h1');
         const as = document.querySelectorAll('a');
         const ps = document.querySelectorAll('p');
+        const themeicon = document.querySelector('#theme-icon')
 
         themeToggleBtn.addEventListener('click', () => {
+            themeicon.classList.toggle('fa-moon')
             body.classList.toggle('dark-theme');
             container.classList.toggle('dark-theme');
             h1.classList.toggle('dark-theme');
